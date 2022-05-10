@@ -1,5 +1,7 @@
 package com.tests;
 
+import java.util.Arrays;
+
 import com.navlabs.excel.reader.NALExcelXLSReader;
 
 public class ExcelPOITest {
@@ -15,6 +17,9 @@ public class ExcelPOITest {
 		System.out.println(cell);
 		
 		//reader.addSheet("naveen");
+		
+		Object data[][] = reader.getSheetData("register");
+		System.out.println(Arrays.deepToString(data));
 	}
 
 }
