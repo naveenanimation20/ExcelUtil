@@ -19,7 +19,7 @@ This is the constructor of the NALExcelXLSReader class.
 It takes a file path as input and initializes the instance variables path, fis, workbook, sheet, row, and cell.
 It also reads the workbook from the given file path using a FileInputStream and initializes the workbook and sheet instance variables to the first sheet of the workbook.
 
-#public int getRowCount(String sheetName): 
+##public int getRowCount(String sheetName): 
 This method takes a sheet name as input and returns the number of rows in the sheet. 
 It first gets the index of the sheet using the workbook.getSheetIndex(sheetName) method. 
 If the sheet doesn't exist, it returns 0. Otherwise, it gets the sheet using workbook.getSheetAt(index) and returns the number of rows in the sheet using sheet.getLastRowNum() + 1.
