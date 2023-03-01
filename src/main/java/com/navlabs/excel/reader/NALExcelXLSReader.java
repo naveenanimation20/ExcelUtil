@@ -58,8 +58,12 @@ public class NALExcelXLSReader {
 			e.printStackTrace();
 		}
 	}
-	// returns the row count in a sheet
 
+	/**
+	 * returns the row count in a sheet
+	 * @param sheetName
+	 * @return
+	 */
 	public int getRowCount(String sheetName) {
 		int index = workbook.getSheetIndex(sheetName);
 		if (index == -1)
@@ -71,8 +75,14 @@ public class NALExcelXLSReader {
 		}
 
 	}
-	// returns the data from a cell
 
+	/**
+	 * returns the data from a cell
+	 * @param sheetName
+	 * @param colName
+	 * @param rowNum
+	 * @return
+	 */
 	public String getCellData(String sheetName, String colName, int rowNum) {
 		try {
 			if (rowNum <= 0)
@@ -134,7 +144,13 @@ public class NALExcelXLSReader {
 		}
 	}
 
-	// returns the data from a cell
+	/**
+	 * returns the data from a cell
+	 * @param sheetName
+	 * @param colNum
+	 * @param rowNum
+	 * @return
+	 */
 	public String getCellData(String sheetName, int colNum, int rowNum) {
 		try {
 			if (rowNum <= 0)
@@ -183,7 +199,14 @@ public class NALExcelXLSReader {
 		}
 	}
 
-	// returns true if data is set successfully else false
+	/**
+	 * returns true if data is set successfully else false
+	 * @param sheetName
+	 * @param colName
+	 * @param rowNum
+	 * @param data
+	 * @return
+	 */
 	public boolean setCellData(String sheetName, String colName, int rowNum, String data) {
 		try {
 			fis = new FileInputStream(path);
@@ -236,7 +259,16 @@ public class NALExcelXLSReader {
 		return true;
 	}
 
-	// returns true if data is set successfully else false
+
+	/**
+	 * returns true if data is set successfully else false
+	 * @param sheetName
+	 * @param colName
+	 * @param rowNum
+	 * @param data
+	 * @param url
+	 * @return
+	 */
 	public boolean setCellData(String sheetName, String colName, int rowNum, String data, String url) {
 		// System.out.println("setCellData setCellData******************");
 		try {
@@ -300,7 +332,11 @@ public class NALExcelXLSReader {
 		return true;
 	}
 
-	// returns true if sheet is created successfully else false
+	/**
+	 * returns true if sheet is created successfully else false
+	 * @param sheetname
+	 * @return
+	 */
 	public boolean addSheet(String sheetname) {
 
 		FileOutputStream fileOut;
@@ -316,8 +352,11 @@ public class NALExcelXLSReader {
 		return true;
 	}
 
-	// returns true if sheet is removed successfully else false if sheet does
-	// not exist
+	/**
+	 * returns true if sheet is removed successfully else false if sheet does not exist
+	 * @param sheetName
+	 * @return
+	 */
 	public boolean removeSheet(String sheetName) {
 		int index = workbook.getSheetIndex(sheetName);
 		if (index == -1)
@@ -336,9 +375,9 @@ public class NALExcelXLSReader {
 		return true;
 	}
 
-	// returns true if column is created successfully
+
 	/**
-	 * 
+	 * returns true if column is created successfully
 	 * @param sheetName
 	 * @param colName
 	 * @return
@@ -382,9 +421,8 @@ public class NALExcelXLSReader {
 
 	}
 
-	// removes a column and all the contents
 	/**
-	 * 
+	 * removes a column and all the contents
 	 * @param sheetName
 	 * @param colNum
 	 * @return
@@ -422,9 +460,9 @@ public class NALExcelXLSReader {
 
 	}
 
-	// find whether sheets exists
+
 	/**
-	 * 
+	 * find whether sheets exists
 	 * @param sheetName
 	 * @return
 	 */
@@ -440,9 +478,9 @@ public class NALExcelXLSReader {
 			return true;
 	}
 
-	// returns number of columns in a sheet
+
 	/**
-	 * 
+	 * returns number of columns in a sheet
 	 * @param sheetName
 	 * @return
 	 */
@@ -462,7 +500,7 @@ public class NALExcelXLSReader {
 	}
 
 	/**
-	 * 
+	 * add hyperlink in the sheet
 	 * @param sheetName
 	 * @param screenShotColName
 	 * @param testCaseName
