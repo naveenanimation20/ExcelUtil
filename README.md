@@ -14,17 +14,17 @@ The class also has a method for getting the row count of a specific sheet. It ta
 
 Here is a more detailed description of each method in the provided code:
 
-#public NALExcelXLSReader(String path): 
+**public NALExcelXLSReader(String path)**: 
 This is the constructor of the NALExcelXLSReader class. 
 It takes a file path as input and initializes the instance variables path, fis, workbook, sheet, row, and cell.
 It also reads the workbook from the given file path using a FileInputStream and initializes the workbook and sheet instance variables to the first sheet of the workbook.
 
-##public int getRowCount(String sheetName): 
+**public int getRowCount(String sheetName)**: 
 This method takes a sheet name as input and returns the number of rows in the sheet. 
 It first gets the index of the sheet using the workbook.getSheetIndex(sheetName) method. 
 If the sheet doesn't exist, it returns 0. Otherwise, it gets the sheet using workbook.getSheetAt(index) and returns the number of rows in the sheet using sheet.getLastRowNum() + 1.
 
-#public String getCellData(String sheetName, String colName, int rowNum): 
+**public String getCellData(String sheetName, String colName, int rowNum)**: 
 This method takes a sheet name, column name, and row number as input and returns the data in the cell corresponding to the input parameters. 
 It first gets the index of the sheet using the workbook.getSheetIndex(sheetName) method. 
 If the sheet doesn't exist, it returns an empty string. 
@@ -35,7 +35,7 @@ If the cell is a number or formula, it returns the numeric value as a string.
 If the cell is a blank, it returns an empty string. 
 If the cell is a boolean, it returns the boolean value as a string.
 
-#public String getCellData(String sheetName, int colNum, int rowNum):
+**public String getCellData(String sheetName, int colNum, int rowNum)**:
 This method takes a sheet name, column number, and row number as input and returns the data in the cell corresponding to the input parameters.
 It first gets the index of the sheet using the workbook.getSheetIndex(sheetName) method.
 If the sheet doesn't exist, it returns an empty string. Otherwise, it gets the cell using row.getCell(colNum) and returns the cell data as a string.
